@@ -3,7 +3,7 @@ path = require('path');
 helpers = require('yeoman-generator').test;
 
 exports.command = {
-  description: 'Create a freshbooks-cli plugin',
+  description: 'Create a freshbooks-cli plugin in cwd',
 };
 
 if (require.main === module) {
