@@ -1,6 +1,6 @@
 path = require 'path'
 nopt = require 'nopt'
-nconf = require 'nconf'
+conf = require('freshbooks-cli-config').getConf()
 exec = require('child_process').exec
 
 displayHelp = ->
@@ -29,7 +29,7 @@ else if parsedOptions.option
   # Examples:
   #
   #   # Retrieve some item from the freshbooks-config key/value store
-  #   someKey = nconf.get 'some:key'
+  #   someKey = conf.get 'some:key'
 
   # ...
 

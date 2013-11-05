@@ -1,11 +1,11 @@
 (function() {
-  var displayHelp, exec, nconf, nopt, parsedOptions, path;
+  var conf, displayHelp, exec, nopt, parsedOptions, path;
 
   path = require('path');
 
   nopt = require('nopt');
 
-  nconf = require('nconf');
+  conf = require('freshbooks-cli-config').getConf();
 
   exec = require('child_process').exec;
 
