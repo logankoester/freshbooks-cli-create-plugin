@@ -11,7 +11,6 @@ module.exports = class PluginGenerator extends yeoman.generators.Base
     @sourceRoot path.join __dirname, 'templates'
 
     @on 'end', ->
-      @installDependencies skipInstall: @options['skipInstall']
       console.log "Next steps...\n"
       console.log "Build your plugin!\n"
       console.log '    $ npm install'
@@ -29,7 +28,7 @@ module.exports = class PluginGenerator extends yeoman.generators.Base
       console.log "    $ git push --tags"
       console.log "    $ npm publish"
       console.log "    $ npm unlink"
-      console.log "    $ npm install #{@app.name} -g"
+      console.log "    $ npm install #{@app.name} -g\n"
 
     @pkg = JSON.parse(@readFileAsString(path.join(__dirname, '../package.json')))
 

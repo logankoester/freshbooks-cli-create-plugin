@@ -31,7 +31,6 @@
         },
         githubUsername: 'testuser'
       });
-      this.app.options['skipInstall'] = true;
       return this.app.run({}, function() {
         helpers.assertFiles(expected);
         return done();

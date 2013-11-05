@@ -18,9 +18,6 @@
       this.options = options;
       this.sourceRoot(path.join(__dirname, 'templates'));
       this.on('end', function() {
-        this.installDependencies({
-          skipInstall: this.options['skipInstall']
-        });
         console.log("Next steps...\n");
         console.log("Build your plugin!\n");
         console.log('    $ npm install');
@@ -38,7 +35,7 @@
         console.log("    $ git push --tags");
         console.log("    $ npm publish");
         console.log("    $ npm unlink");
-        return console.log("    $ npm install " + this.app.name + " -g");
+        return console.log("    $ npm install " + this.app.name + " -g\n");
       });
       this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));
     }

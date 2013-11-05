@@ -43,7 +43,6 @@ describe 'generator', ->
         url: 'https://author.example.com'
       githubUsername: 'testuser'
 
-    @app.options['skipInstall'] = true
     @app.run {}, ->
       helpers.assertFiles expected
       done()

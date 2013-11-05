@@ -1,5 +1,3 @@
-_ = require 'underscore'
-_.str = require 'underscore.string'
 path = require 'path'
 
 module.exports.prompt =  ->
@@ -8,9 +6,9 @@ module.exports.prompt =  ->
   prompts = [
     type: 'input'
     name: 'name'
-    message: 'Application name'
+    message: 'Plugin name'
     default: =>
-      _.str.classify path.basename( process.cwd() )
+      path.basename( process.cwd() )
   ,
     type: 'input'
     name: 'version'

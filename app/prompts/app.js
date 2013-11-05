@@ -1,9 +1,5 @@
 (function() {
-  var path, _;
-
-  _ = require('underscore');
-
-  _.str = require('underscore.string');
+  var path;
 
   path = require('path');
 
@@ -15,9 +11,9 @@
       {
         type: 'input',
         name: 'name',
-        message: 'Application name',
+        message: 'Plugin name',
         "default": function() {
-          return _.str.classify(path.basename(process.cwd()));
+          return path.basename(process.cwd());
         }
       }, {
         type: 'input',
