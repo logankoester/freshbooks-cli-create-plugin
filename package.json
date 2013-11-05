@@ -1,6 +1,6 @@
 {
   "name": "freshbooks-cli-create-plugin",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "A freshbooks-cli plugin to generate freshbooks-cli plugins",
   "main": "app/index.js",
   "directories": {
