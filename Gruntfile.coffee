@@ -95,7 +95,7 @@ module.exports = (grunt) ->
         cwd: path.join(__dirname, 'node_modules', 'marked-man', 'bin')
     , (error, result, code) ->
       throw error if error
-      out = path.join __dirname, 'man', 'freshbooks-config.1'
+      out = path.join __dirname, 'man', 'freshbooks-create-plugin.1'
       grunt.file.write out, result.stdout
       done()
 
