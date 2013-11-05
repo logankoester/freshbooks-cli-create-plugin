@@ -18,7 +18,7 @@
     });
     return it('creates expected files', function(done) {
       var expected;
-      expected = ['.gitignore', '.editorconfig', '.travis.yml', 'package.json', 'Gruntfile.coffee', 'LICENSE-MIT', 'bin/freshbooks-test', 'src/index.coffee', 'src/tests/index_test.coffee', 'readme/contributing.md', 'readme/examples.md', 'readme/license.md', 'readme/overview.md', 'readme/usage.md'];
+      expected = ['.gitignore', '.editorconfig', '.travis.yml', 'package.json', 'Gruntfile.coffee', 'LICENSE-MIT', 'bin/freshbooks-test', 'src/index.coffee', 'src/lib/mock_freshbooks.coffee', 'src/tests/index_test.coffee', 'src/tests/config_file', 'readme/contributing.md', 'readme/examples.md', 'readme/license.md', 'readme/overview.md', 'readme/usage.md'];
       helpers.mockPrompt(this.app, {
         name: 'test-plugin',
         version: '0.1.0',

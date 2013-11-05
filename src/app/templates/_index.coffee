@@ -11,6 +11,14 @@ displayHelp = ->
     process.stderr.write "#{stderr}"
     console.error err if err
 
+getFreshbooks = ->
+  if conf.get 'simulate'
+    Freshbooks = require './lib/mock_freshbooks'
+  else
+    Freshbooks = require 'freshbooks'
+  base_uri = "#{conf.get('api:url')}/#{conf.get('api:version')}/xml-in"
+  return new Freshbooks base_uri, conf.get('api:token')
+
 parsedOptions = nopt
   option: String
   help: Boolean

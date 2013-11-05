@@ -59,7 +59,9 @@
     this.copy('_package.json', 'package.json');
     this.copy('_Gruntfile.coffee', 'Gruntfile.coffee');
     this.copy('_index.coffee', "src/index.coffee");
+    this.copy('_mock_freshbooks.coffee', "src/lib/mock_freshbooks.coffee");
     this.copy('_index_test.coffee', 'src/tests/index_test.coffee');
+    this.copy('_config_file', 'src/tests/config_file');
     this.copy('_subcommand', "bin/freshbooks-" + this.app.subcommand);
     this.copy('readme/_contributing.md', "readme/contributing.md");
     this.copy('readme/_examples.md', "readme/examples.md");

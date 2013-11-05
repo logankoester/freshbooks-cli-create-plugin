@@ -1,5 +1,5 @@
 (function() {
-  var conf, displayHelp, exec, nopt, parsedOptions, path;
+  var conf, displayHelp, exec, getFreshbooks, nopt, parsedOptions, path;
 
   path = require('path');
 
@@ -20,6 +20,17 @@
         return console.error(err);
       }
     });
+  };
+
+  getFreshbooks = function() {
+    var Freshbooks, base_uri;
+    if (conf.get('simulate')) {
+      Freshbooks = require('./lib/mock_freshbooks');
+    } else {
+      Freshbooks = require('freshbooks');
+    }
+    base_uri = "" + (conf.get('api:url')) + "/" + (conf.get('api:version')) + "/xml-in";
+    return new Freshbooks(base_uri, conf.get('api:token'));
   };
 
   parsedOptions = nopt({

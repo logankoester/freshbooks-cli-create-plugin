@@ -5,7 +5,8 @@
   "main": "index.js",
   "directories": {
     "man": "man",
-    "doc": "readme"
+    "doc": "readme",
+    "lib": "lib"
   },
   "bin": {
     "freshbooks-<%= app.subcommand %>": "./bin/freshbooks-<%= app.subcommand %>"
@@ -34,7 +35,8 @@
     "grunt-contrib-nodeunit": "~0.2.2",
     "grunt-readme-generator": "~0.3.41",
     "marked-man": "0.0.2",
-    "marked": "~0.2.10"
+    "marked": "~0.2.10",
+    "grunt-contrib-copy": "~0.4.1"
   },
   "keywords": [
     "freshbooks-cli",

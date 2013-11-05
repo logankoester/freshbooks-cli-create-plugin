@@ -22,6 +22,13 @@ module.exports = (grunt) ->
         dest: '.'
         ext: '.js'
 
+    copy:
+      src:
+        expand: true
+        cwd: 'src/tests'
+        src: 'config_file'
+        dest: 'tests/'
+
     clean:
       lib: ['lib/', 'tests/', 'man/']
 
@@ -76,6 +83,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-clean'
   grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-contrib-watch'
+  grunt.loadNpmTasks 'grunt-contrib-copy'
   grunt.loadNpmTasks 'grunt-contrib-nodeunit'
   grunt.loadNpmTasks 'grunt-readme-generator'
   grunt.loadNpmTasks 'grunt-bump'
@@ -93,6 +101,6 @@ module.exports = (grunt) ->
       grunt.file.write out, result.stdout
       done()
 
-  grunt.registerTask 'build', ['clean', 'coffee', 'readme_generator', 'marked-man']
+  grunt.registerTask 'build', ['clean', 'coffee', 'copy', 'readme_generator', 'marked-man']
   grunt.registerTask 'test', ['nodeunit']
   grunt.registerTask 'default', ['build', 'test']
