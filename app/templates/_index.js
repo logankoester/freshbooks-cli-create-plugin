@@ -26,10 +26,9 @@
     option: String,
     help: Boolean
   }, {
-    o: ['--option']({
-      h: ['--help']
-    }, process.argv, 2)
-  });
+    o: ['--option'],
+    h: ['--help']
+  }, process.argv, 2);
 
   if (parsedOptions.help) {
     displayHelp();

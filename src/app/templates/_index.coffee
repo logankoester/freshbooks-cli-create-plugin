@@ -14,7 +14,8 @@ displayHelp = ->
 parsedOptions = nopt
   option: String
   help: Boolean
-, o: ['--option']
+,
+  o: ['--option']
   h: ['--help']
 , process.argv, 2
 
