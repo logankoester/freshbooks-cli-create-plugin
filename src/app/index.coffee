@@ -11,7 +11,7 @@ module.exports = class PluginGenerator extends yeoman.generators.Base
     @sourceRoot path.join __dirname, 'templates'
 
     @on 'end', ->
-      require('fs').chmodSync "bin/freshbooks-#{@app.subcommand}", 755
+      require('fs').chmodSync "bin/freshbooks-#{@app.subcommand}", '1755'
 
       console.log "Next steps...\n"
       console.log "Build your plugin!\n"
