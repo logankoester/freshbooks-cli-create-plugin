@@ -8,7 +8,7 @@ describe 'generator', ->
   beforeEach (done) ->
     helpers.testDirectory path.join(__dirname, 'tmp'), (err) =>
       return done(err) if err
-      @generator = helpers.createGenerator('freshbooks:plugin', [
+      @app = helpers.createGenerator('freshbooks:plugin', [
         ['../../app', 'freshbooks:plugin']
       ])
       done()
@@ -17,14 +17,33 @@ describe 'generator', ->
     
     # add files you expect to exist here.
     expected = [
+      '.gitignore',
       '.editorconfig',
       '.travis.yml',
-      'package.json'
+      'package.json',
+      'Gruntfile.coffee',
+      'LICENSE-MIT',
+      'bin/freshbooks-test',
+      'src/index.coffee',
+      'src/tests/index_test.coffee',
+      'readme/contributing.md',
+      'readme/examples.md',
+      'readme/license.md',
+      'readme/overview.md',
+      'readme/usage.md'
     ]
-    helpers.mockPrompt @generator,
-      someOption: true
+    helpers.mockPrompt @app,
+      name: 'test-plugin'
+      version: '0.1.0'
+      description: 'A test plugin'
+      subcommand: 'test'
+      author:
+        name: 'Test Author'
+        email: 'author@example.com'
+        url: 'https://author.example.com'
+      githubUsername: 'testuser'
 
-    @generator.options["skip-install"] = true
-    @generator.run {}, ->
+    @app.options['skipInstall'] = true
+    @app.run {}, ->
       helpers.assertFiles expected
       done()

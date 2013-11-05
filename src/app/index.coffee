@@ -11,30 +11,46 @@ module.exports = class PluginGenerator extends yeoman.generators.Base
     @sourceRoot path.join __dirname, 'templates'
 
     @on 'end', ->
-      @installDependencies skipInstall: options['skipInstall']
+      @installDependencies skipInstall: @options['skipInstall']
+      console.log "Next steps...\n"
+      console.log "Build your plugin!\n"
+      console.log '    $ npm install'
+      console.log '    $ grunt'
+      console.log "\nDevelop your plugin!\n"
+      console.log '    $ npm link'
+      console.log '    $ git init'
+      console.log '    $ grunt watch'
+      console.log "\n    * Write your code in src/index.coffee"
+      console.log "    * Write your tests in src/tests/index_test.coffee"
+      console.log "    * Write your documentation in readme/*.md"
+      console.log "\nPublish your plugin!\n"
+      console.log "    $ grunt bump:<major|minor|patch>"
+      console.log "    $ git push origin master"
+      console.log "    $ git push --tags"
+      console.log "    $ npm publish"
+      console.log "    $ npm unlink"
+      console.log "    $ npm install #{@app.name} -g"
 
     @pkg = JSON.parse(@readFileAsString(path.join(__dirname, '../package.json')))
 
-PluginGenerator::askFor = ->
-  done = @async()
-  
-  console.log @yeoman
+PluginGenerator::appPrompts = require('./prompts/app').prompt
+PluginGenerator::authorPrompts = require('./prompts/author').prompt
 
-  prompts = [
-    type: "confirm"
-    name: "someOption"
-    message: "Would you like to enable this option?"
-    default: true
-  ]
-
-  @prompt prompts, (props) ->
-    @someOption = props.someOption
-    done()
-
-PluginGenerator::app = ->
-  @mkdir 'templates'
-  @copy '_package.json', 'package.json'
-
-PluginGenerator::projectfiles =  ->
+PluginGenerator::copyFiles = ->
+  @mkdir 'bin'
+  @mkdir 'readme'
+  @mkdir 'src/tests'
+  @copy 'gitignore', '.gitignore'
   @copy 'editorconfig', '.editorconfig'
   @copy 'travis.yml', '.travis.yml'
+  @copy '_LICENSE-MIT', 'LICENSE-MIT'
+  @copy '_package.json', 'package.json'
+  @copy '_Gruntfile.coffee', 'Gruntfile.coffee'
+  @copy '_index.coffee', "src/index.coffee"
+  @copy '_index_test.coffee', 'src/tests/index_test.coffee'
+  @copy '_subcommand', "bin/freshbooks-#{@app.subcommand}"
+  @copy 'readme/_contributing.md', "readme/contributing.md"
+  @copy 'readme/_examples.md', "readme/examples.md"
+  @copy 'readme/_license.md', "readme/license.md"
+  @copy 'readme/_overview.md', "readme/overview.md"
+  @copy 'readme/_usage.md', "readme/usage.md"

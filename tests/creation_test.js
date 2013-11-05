@@ -12,18 +12,27 @@
         if (err) {
           return done(err);
         }
-        _this.generator = helpers.createGenerator('freshbooks:plugin', [['../../app', 'freshbooks:plugin']]);
+        _this.app = helpers.createGenerator('freshbooks:plugin', [['../../app', 'freshbooks:plugin']]);
         return done();
       });
     });
     return it('creates expected files', function(done) {
       var expected;
-      expected = ['.editorconfig', '.travis.yml', 'package.json'];
-      helpers.mockPrompt(this.generator, {
-        someOption: true
+      expected = ['.gitignore', '.editorconfig', '.travis.yml', 'package.json', 'Gruntfile.coffee', 'LICENSE-MIT', 'bin/freshbooks-test', 'src/index.coffee', 'src/tests/index_test.coffee', 'readme/contributing.md', 'readme/examples.md', 'readme/license.md', 'readme/overview.md', 'readme/usage.md'];
+      helpers.mockPrompt(this.app, {
+        name: 'test-plugin',
+        version: '0.1.0',
+        description: 'A test plugin',
+        subcommand: 'test',
+        author: {
+          name: 'Test Author',
+          email: 'author@example.com',
+          url: 'https://author.example.com'
+        },
+        githubUsername: 'testuser'
       });
-      this.generator.options["skip-install"] = true;
-      return this.generator.run({}, function() {
+      this.app.options['skipInstall'] = true;
+      return this.app.run({}, function() {
         helpers.assertFiles(expected);
         return done();
       });

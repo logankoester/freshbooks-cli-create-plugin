@@ -20,7 +20,9 @@
     "url": "https://github.com/logankoester"
   },
   "dependencies": {
-    "yeoman-generator": "~0.13.0"
+    "yeoman-generator": "~0.13.0",
+    "underscore": "~1.5.2",
+    "underscore.string": "~2.3.3"
   },
   "devDependencies": {
     "mocha": "~1.12.0",
