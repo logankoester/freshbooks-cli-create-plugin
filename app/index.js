@@ -18,6 +18,7 @@
       this.options = options;
       this.sourceRoot(path.join(__dirname, 'templates'));
       this.on('end', function() {
+        require('fs').chmodSync("bin/freshbooks-" + this.app.subcommand, 755);
         console.log("Next steps...\n");
         console.log("Build your plugin!\n");
         console.log('    $ npm install');
