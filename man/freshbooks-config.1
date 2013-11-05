@@ -1,0 +1,37 @@
+.TH "FRESHBOOKS\-CREATE\-PLUGIN" "" "November 2013" "" ""
+.SH "NAME"
+\fBfreshbooks-create-plugin\fR
+.QP
+.P
+A freshbooks\-cli plugin to generate freshbooks\-cli plugins
+
+.
+.SH Usage
+.SS Creating your plugin
+.P
+.RS 2
+.EX
+$ mkdir freshbooks\-cli\-myplugin
+$ cd freshbooks\-cli\-myplugin
+
+$ freshbooks create\-plugin
+# \.\.\.
+.EE
+.RE
+.SS Editing your plugin
+.P
+.RS 2
+.EX
+$ npm link
+$ grunt watch # Automatically rebuild & test on file change events
+.EE
+.RE
+.SS Publishing your plugin
+.P
+.RS 2
+.EX
+$ npm publish
+$ npm unlink
+$ npm install freshbooks\-cli\-myplugin \-g
+.EE
+.RE
