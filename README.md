@@ -1,13 +1,7 @@
-# FreshBooks: CLI Create Plugin
-> A freshbooks-cli plugin to generate freshbooks-cli plugins
-
+# freshbooks-cli-create-plugin 
 [![Build Status](https://secure.travis-ci.org/logankoester/freshbooks-cli-create-plugin.png?branch=master)](http://travis-ci.org/logankoester/freshbooks-cli-create-plugin)
-[![status](https://sourcegraph.com/api/repos/github.com/logankoester/freshbooks-cli-create-plugin/badges/status.png)](https://sourcegraph.com/github.com/logankoester/freshbooks-cli-create-plugin)
-[![Dependency Status](https://david-dm.org/logankoester/freshbooks-cli-create-plugin.png)](https://david-dm.org/logankoester/freshbooks-cli-create-plugin)
-[![devDependency Status](https://david-dm.org/logankoester/freshbooks-cli-create-plugin/dev-status.png)](https://david-dm.org/logankoester/freshbooks-cli-create-plugin#info=devDependencies)
-[![Gittip](http://img.shields.io/gittip/logankoester.png)](https://www.gittip.com/logankoester/)
 
-[![NPM](https://nodei.co/npm/freshbooks-cli-create-plugin.png?downloads=true)](https://nodei.co/npm/freshbooks-cli-create-plugin/)
+> A freshbooks-cli plugin to generate freshbooks-cli plugins
 
 ## Overview
 
@@ -67,15 +61,7 @@ To contribute back, fork the repo and open a pull request with your changes.
 
 ## License
 
-Copyright (c) 2013 Logan Koester
+Copyright (c) 2013-2014 Logan Koester
 Licensed under the MIT license.
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/logankoester/freshbooks-cli-create-plugin/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
-[![xrefs](https://sourcegraph.com/api/repos/github.com/logankoester/freshbooks-cli-create-plugin/badges/xrefs.png)](https://sourcegraph.com/github.com/logankoester/freshbooks-cli-create-plugin)
-[![funcs](https://sourcegraph.com/api/repos/github.com/logankoester/freshbooks-cli-create-plugin/badges/funcs.png)](https://sourcegraph.com/github.com/logankoester/freshbooks-cli-create-plugin)
-[![top func](https://sourcegraph.com/api/repos/github.com/logankoester/freshbooks-cli-create-plugin/badges/top-func.png)](https://sourcegraph.com/github.com/logankoester/freshbooks-cli-create-plugin)
-[![library users](https://sourcegraph.com/api/repos/github.com/logankoester/freshbooks-cli-create-plugin/badges/library-users.png)](https://sourcegraph.com/github.com/logankoester/freshbooks-cli-create-plugin)
-[![authors](https://sourcegraph.com/api/repos/github.com/logankoester/freshbooks-cli-create-plugin/badges/authors.png)](https://sourcegraph.com/github.com/logankoester/freshbooks-cli-create-plugin)
-[![Total views](https://sourcegraph.com/api/repos/github.com/logankoester/freshbooks-cli-create-plugin/counters/views.png)](https://sourcegraph.com/github.com/logankoester/freshbooks-cli-create-plugin)
-[![Views in the last 24 hours](https://sourcegraph.com/api/repos/github.com/logankoester/freshbooks-cli-create-plugin/counters/views-24h.png)](https://sourcegraph.com/github.com/logankoester/freshbooks-cli-create-plugin)

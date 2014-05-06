@@ -2,7 +2,7 @@
 # * freshbooks-cli-create-plugin
 # * https://github.com/logankoester/freshbooks-cli-create-plugin
 # *
-# * Copyright (c) 2013 Logan Koester
+# * Copyright (c) 2013-2014 Logan Koester
 # * Licensed under the MIT license.
 #
 
