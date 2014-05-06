@@ -9,7 +9,7 @@ describe 'generator', ->
     helpers.testDirectory path.join(__dirname, 'tmp'), (err) =>
       return done(err) if err
       @app = helpers.createGenerator('freshbooks:plugin', [
-        ['../../app', 'freshbooks:plugin']
+        [require('../app'), 'freshbooks:plugin']
       ])
       done()
 

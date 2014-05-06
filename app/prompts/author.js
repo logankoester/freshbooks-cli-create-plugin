@@ -1,7 +1,6 @@
 (function() {
   module.exports.prompt = function() {
-    var done, prompts,
-      _this = this;
+    var done, prompts;
     done = this.async();
     prompts = [
       {
@@ -22,15 +21,17 @@
         message: 'Github username'
       }
     ];
-    return this.prompt(prompts, function(props) {
-      _this.author = {
-        name: props.name,
-        email: props.email,
-        url: props.url,
-        github: props.github
+    return this.prompt(prompts, (function(_this) {
+      return function(props) {
+        _this.author = {
+          name: props.name,
+          email: props.email,
+          url: props.url,
+          github: props.github
+        };
+        return done();
       };
-      return done();
-    });
+    })(this));
   };
 
 }).call(this);
